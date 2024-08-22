@@ -57,7 +57,7 @@ public class SchedulePeriodController {
     }
 
     @GetMapping("/filter")
-    public ResponseEntity<List<SchedulePeriodEntity>> get(
+    public ResponseEntity<List<SchedulePeriodEntity>> filter(
             @RequestParam(required = false) Map<String, Object> queryParam,
             @RequestHeader(required = false) Map<String, Object> queryHeader,
             @RequestBody SchedulePeriodFilterAndSort filterAndSort
