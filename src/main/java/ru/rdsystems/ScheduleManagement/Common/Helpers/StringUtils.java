@@ -1,6 +1,11 @@
 package ru.rdsystems.ScheduleManagement.Common.Helpers;
 
 public class StringUtils {
+
+    private StringUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      *
      * @param s - строка для проверки

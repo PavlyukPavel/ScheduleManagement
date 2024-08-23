@@ -2,6 +2,8 @@ package ru.rdsystems.ScheduleManagement.DTO.FilterAndSort;
 
 import lombok.*;
 
+import java.time.LocalTime;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,4 +15,6 @@ public class SchedulePeriodFilter {
     private String slotType;
     private String administratorId;
     private String executorId;
+    private LocalTime beginTime;
+    private LocalTime endTime;
 }

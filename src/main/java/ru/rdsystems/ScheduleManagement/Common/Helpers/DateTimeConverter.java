@@ -3,6 +3,11 @@ package ru.rdsystems.ScheduleManagement.Common.Helpers;
 import java.time.*;
 
 public class DateTimeConverter {
+
+    private DateTimeConverter() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      * Функция конвертация даты и времени для отображения в JSON ответах
      * @param dt - дата и время в формате БД (TIMESTAMPTZ)

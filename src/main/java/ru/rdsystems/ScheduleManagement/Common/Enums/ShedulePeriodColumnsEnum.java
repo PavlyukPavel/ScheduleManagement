@@ -6,5 +6,7 @@ public enum ShedulePeriodColumnsEnum {
     scheduleId,
     slotType,
     administratorId,
-    executorId;
+    executorId,
+    beginTime,
+    endTime;
 }
