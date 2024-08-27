@@ -13,8 +13,8 @@ import java.util.List;
 public interface SchedulePeriodRepo extends JpaRepository<SchedulePeriodEntity, String>, JpaSpecificationExecutor<SchedulePeriodEntity> {
     @Query(value = """
             select sp.*
-            from schedule_period sp
-            join slot s
+            from {h-schema}schedule_period sp
+            join {h-schema}slot s
             on sp.slot_id = s.id
             where sp.executor_id  = :employeeID
             and sp.schedule_id = :scheduleId

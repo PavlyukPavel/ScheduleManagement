@@ -12,6 +12,7 @@ import ru.rdsystems.schedule.dto.response.EntityPostRs;
 import ru.rdsystems.schedule.entity.ScheduleEntity;
 import ru.rdsystems.schedule.service.ScheduleService;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -53,5 +54,22 @@ public class ScheduleController {
         } catch (ScheduleNotFoundException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
         }
+    }
+
+    @GetMapping("/full")
+    public ResponseEntity<List<Map<String, Object>>> full(
+            @RequestParam(required = false) String id,
+            @RequestParam(required = false) String name,
+            @RequestHeader(required = false) Map<String, Object> queryHeader,
+            @RequestBody(required = false) Map<String, Object> queryBody
+    ) {
+        Utils.log("FULL: Schedule");
+        Utils.log("id = " + id);
+        Utils.log("name = " + name);
+        Utils.log(queryHeader);
+        Utils.log(queryBody);
+
+        List<Map<String, Object>> result = scheduleService.getSchedule(id, name);
+        return ResponseEntity.ok(result);
     }
 }
