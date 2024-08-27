@@ -28,7 +28,7 @@ public class SchedulePeriodEntity {
     @NonNull
     private ScheduleEntity scheduleId;
 
-    @Enumerated(EnumType.STRING)
+    @Convert(converter = SlotTypeEnum.Converter.class)
     @Column(nullable = false, name = "slot_type", length = 20)
     @NonNull
     private SlotTypeEnum slotType;
